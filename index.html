@@ -343,18 +343,8 @@
 <li>auth-server 所有客户端的权限管理中心,包括角色分配，用户信息获取等功能</li>
 </ul>
 <h2 id="使用教程"><a href="#使用教程" class="headerlink" title="使用教程"></a>使用教程</h2><h3 id="多版本配置"><a href="#多版本配置" class="headerlink" title="多版本配置"></a>多版本配置</h3><p>主要针对web端的配置,这里指auth-server-web</p>
-<p>首先在相应的pom.xml中的profiles节点添加如下代码:<br>``</p>
-<p><profile>
-    <id>dev</id>
-    <properties>
-        <env>版本名称</env>
-    </properties>
-    <activation>
-        <activebydefault>true</activebydefault>
-    </activation>
-</profile>
-``
-在src/main.filters文件夹下创建版本名称-env.properties文件即可</p>
+<p>首先在相应的pom.xml中的profiles节点添加如下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;profile&gt;</div><div class="line">    &lt;id&gt;dev&lt;/id&gt;</div><div class="line">    &lt;properties&gt;</div><div class="line">        &lt;env&gt;版本名称&lt;/env&gt;</div><div class="line">    &lt;/properties&gt;</div><div class="line">    &lt;activation&gt;</div><div class="line">        &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</div><div class="line">    &lt;/activation&gt;</div><div class="line">&lt;/profile&gt;</div></pre></td></tr></table></figure></p>
+<p>在src/main.filters文件夹下创建版本名称-env.properties文件即可</p>
 <h3 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h3><h4 id="数据表说明"><a href="#数据表说明" class="headerlink" title="数据表说明"></a>数据表说明</h4><p>所需要的数据表均在auth-server/auth-server-core中的resource文件夹下</p>
 <p>app:应用信息存储表
 authorization:授权信息

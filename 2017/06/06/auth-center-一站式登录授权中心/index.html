@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://minlingchao1.github.io/2017/06/06/auth-center-一站式登录授权中心/index.html">
 <meta property="og:site_name" content="Seven">
 <meta property="og:description" content="项目地址https://github.com/minlingchao1/auth-center 项目说明auth-center是一个轻量级的权限管理系统。其核心目标是实现公司内部各个系统的权限的集中管理,利用cas单点登录实现系统的一站式登录 特点 单点登录 权限集中管理，提供权限管理中心 集成第三方登录，与现有账号绑定，方便快捷 利用shiro实现权限管理，灵活快捷，可以控制到页面的菜单或者按钮">
-<meta property="og:updated_time" content="2017-06-06T12:59:32.000Z">
+<meta property="og:updated_time" content="2017-06-07T13:35:12.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="auth-center-一站式登录授权中心">
 <meta name="twitter:description" content="项目地址https://github.com/minlingchao1/auth-center 项目说明auth-center是一个轻量级的权限管理系统。其核心目标是实现公司内部各个系统的权限的集中管理,利用cas单点登录实现系统的一站式登录 特点 单点登录 权限集中管理，提供权限管理中心 集成第三方登录，与现有账号绑定，方便快捷 利用shiro实现权限管理，灵活快捷，可以控制到页面的菜单或者按钮">
@@ -345,14 +345,16 @@
 <p>首先在相应的pom.xml中的profiles节点添加如下代码:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;profile&gt;</div><div class="line">    &lt;id&gt;dev&lt;/id&gt;</div><div class="line">    &lt;properties&gt;</div><div class="line">        &lt;env&gt;版本名称&lt;/env&gt;</div><div class="line">    &lt;/properties&gt;</div><div class="line">    &lt;activation&gt;</div><div class="line">        &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;</div><div class="line">    &lt;/activation&gt;</div><div class="line">&lt;/profile&gt;</div></pre></td></tr></table></figure></p>
 <p>在src/main.filters文件夹下创建版本名称-env.properties文件即可</p>
 <h3 id="数据库配置"><a href="#数据库配置" class="headerlink" title="数据库配置"></a>数据库配置</h3><h4 id="数据表说明"><a href="#数据表说明" class="headerlink" title="数据表说明"></a>数据表说明</h4><p>所需要的数据表均在auth-server/auth-server-core中的resource文件夹下</p>
-<p>app:应用信息存储表
-authorization:授权信息
-resource:资源（菜单/按钮)
-role:角色表
-user:用户表
-qq_user:qq用户信息
-qq_user_ref:qq用户与用户表关联
-verify_code:验证码发送表</p>
+<ul>
+<li>app:应用信息存储表</li>
+<li>authorization:授权信息</li>
+<li>resource:资源（菜单/按钮)</li>
+<li>role:角色表</li>
+<li>user:用户表</li>
+<li>qq_user:qq用户信息</li>
+<li>qq_user_ref:qq用户与用户表关联</li>
+<li>verify_code:验证码发送表</li>
+</ul>
 <h4 id="数据库连接配置"><a href="#数据库连接配置" class="headerlink" title="数据库连接配置"></a>数据库连接配置</h4><p>数据库配置文件 auth-server/auth-server-web的resource文件夹下 jdbc.properties</p>
 <ul>
 <li>jdbc.driver=com.mysql.jdbc.Driver</li>

@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://minlingchao1.github.io/2017/07/13/VueJs百度统计插件/index.html">
 <meta property="og:site_name" content="Seven">
 <meta property="og:description" content="vue-ba vuejs 百度统计埋点插件 参考项目：https://github.com/raychenfj/vue-uweb  1. 安装1npm install vue-ba --save 直接在页面中引用 1&amp;lt;script src=&amp;quot;./node_modules/vue-uweb/dist/index.js&amp;quot;&amp;gt;&amp;lt;script&amp;gt; 或者通过es6模块">
-<meta property="og:updated_time" content="2017-07-13T15:18:19.000Z">
+<meta property="og:updated_time" content="2017-07-13T15:22:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VueJs百度统计插件">
 <meta name="twitter:description" content="vue-ba vuejs 百度统计埋点插件 参考项目：https://github.com/raychenfj/vue-uweb  1. 安装1npm install vue-ba --save 直接在页面中引用 1&amp;lt;script src=&amp;quot;./node_modules/vue-uweb/dist/index.js&amp;quot;&amp;gt;&amp;lt;script&amp;gt; 或者通过es6模块">
@@ -340,18 +340,20 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.use(ba, &apos;YOUR_SITEID_HERE&apos;)</div></pre></td></tr></table></figure>
 <p>通过传递 options 参数进行更多设置</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.use(uweb,options)</div></pre></td></tr></table></figure>
-<h4 id="options"><a href="#options" class="headerlink" title="options"></a>options</h4><table class="table table-bordered table-striped table-condensed"><tr><td>参数</td><br>    <td>必须</td><br>    <td>默认</td><br>    <td>说明</td><br>    <td>备注</td><br>    </tr><br>    <tr><br>    <td>siteId</td><br>    <td>是</td><br>    <td></td><br>    <td>绑定要接受API请求的统计代码</td><br>    <td></td><br>    </tr><br>    <tr><br>    <td> debug </td><br>    <td>否</td><br>    <td>false</td><br>    <td>调试模式下将在控制台中输出调用window._hmt时传递的参数</td><br>    <td>请不要在生产环境中使用，避免造成安全隐患</td><br>    </tr>
+<h4 id="options"><a href="#options" class="headerlink" title="options"></a>options</h4><table>
+    <tr>
+        <td>参数</td><br>        <td>必须</td><br>        <td>默认</td><br>        <td>说明</td><br>        <td>备注</td><br>    </tr><br>    <tr><br>    <td>siteId</td><br>    <td>是</td><br>    <td></td><br>    <td>绑定要接受API请求的统计代码</td><br>    <td></td><br>    </tr><br>    <tr><br>    <td> debug </td><br>    <td>否</td><br>    <td>false</td><br>    <td>调试模式下将在控制台中输出调用window._hmt时传递的参数</td><br>    <td>请不要在生产环境中使用，避免造成安全隐患</td><br>    </tr>
     <tr><br>    <td> src </td><br>    <td>否</td><br>    <td><a href="https://hm.baidu.com/hm.js?SITEID" target="_blank" rel="external">https://hm.baidu.com/hm.js?SITEID</a></td><br>    <td>指定统计脚本标签的 src 属性</td><br>    <td></td><br>    </tr><br></table>
 
 <h2 id="2-ba-API"><a href="#2-ba-API" class="headerlink" title="2. ba API"></a>2. ba API</h2><h3 id="2-1-trackEvent"><a href="#2-1-trackEvent" class="headerlink" title="2.1 trackEvent"></a>2.1 trackEvent</h3><p>用于发送页面上按钮等交互元素被触发时的事件统计请求。</p>
 <h4 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">this.$ba.trackEvent(category,action,opt_label,opt_value)</div></pre></td></tr></table></figure>
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><table class="table table-bordered table-striped table-condensed"><br>    <tr><br>    <td>参数</td><br>    <td>必须</td><br>    <td>类型</td><br>    <td>说明</td><br>    </tr><br>    <tr><br>    <td> category </td><br>    <td>是</td><br>    <td> string </td><br>    <td>表示事件发生在谁身上</td><br>    </tr>
+<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><table><br>    <tr><br>    <td>参数</td><br>    <td>必须</td><br>    <td>类型</td><br>    <td>说明</td><br>    </tr><br>    <tr><br>    <td> category </td><br>    <td>是</td><br>    <td> string </td><br>    <td>表示事件发生在谁身上</td><br>    </tr>
     <tr><br>    <td> action </td><br>    <td>是</td><br>    <td> string </td><br>    <td>表示访客跟元素交互的行为动作</td><br>    </tr><br>    <tr><br>    <td> opt_label </td><br>    <td>否</td><br>    <td> string </td><br>    <td>用于更详细的描述事件</td><br>    </tr>
     <tr><br>    <td> opt_value </td><br>    <td>否</td><br>    <td> int </td><br>    <td>用于填写打分型事件的分值，加载时间型事件的时长，如果填写为其他形式，系统将按0处理。若填写为浮点小数，系统会自动取整，去掉小数点。</td><br>    </tr><br> </table>
 
 <h3 id="2-2-trackPageview"><a href="#2-2-trackPageview" class="headerlink" title="2.2 trackPageview"></a>2.2 trackPageview</h3><p>用于发送某个URL的PV统计请求，适用于统计AJAX、异步加载页面，友情链接，下载链接的流量</p>
 <h4 id="用法-1"><a href="#用法-1" class="headerlink" title="用法"></a>用法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">this.$ba.trackPageview(pageURL)</div></pre></td></tr></table></figure>
-<h4 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h4><table class="table table-bordered table-striped table-condensed"><br>    <tr><br>    <td>参数</td><br>    <td>必须</td><br>    <td>类型</td><br>    <td>说明</td><br>    </tr><br>    <tr><br>    <td> pageURL </td><br>    <td>是</td><br>    <td> string </td><br>    <td>自定义虚拟PV页面的URL地址，填写以斜杠‘/’开头的相对路径，系统会自动补全域名</td><br>    </tr><br> </table>
+<h4 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h4><table><br>    <tr><br>    <td>参数</td><br>    <td>必须</td><br>    <td>类型</td><br>    <td>说明</td><br>    </tr><br>    <tr><br>    <td> pageURL </td><br>    <td>是</td><br>    <td> string </td><br>    <td>自定义虚拟PV页面的URL地址，填写以斜杠‘/’开头的相对路径，系统会自动补全域名</td><br>    </tr><br> </table>
 
 <h2 id="3-ba-指令"><a href="#3-ba-指令" class="headerlink" title="3. ba 指令"></a>3. ba 指令</h2><p>vue-ba 提供 track-event，track-pageview 两个指令，开发者可以直接在 html 模版中使用来统计网站数据</p>
 <h3 id="3-1-track-event"><a href="#3-1-track-event" class="headerlink" title="3.1 track-event"></a>3.1 track-event</h3><p>使用指令 v-track-event 监听事件， 通过 modifiers 指定事件类型，将自动为绑定元素添加事件监听，当事件触发调用统计代码。 如不指定事件，默认监听 click 事件。</p>

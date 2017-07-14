@@ -341,7 +341,7 @@
 <p>使用vue-ba插件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.use(ba, &apos;YOUR_SITEID_HERE&apos;)</div></pre></td></tr></table></figure>
 <p>通过传递 options 参数进行更多设置</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.use(uweb,options)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Vue.use(ba,options)</div></pre></td></tr></table></figure>
 <h4 id="options"><a href="#options" class="headerlink" title="options"></a>options</h4><table><tr><td>参数</td><td>必须</td><td>默认</td><td>说明</td><td>备注</td></tr><tr><td>siteId</td><td>是</td><td></td><td>绑定要接受API请求的统计代码</td><td></td></tr><tr><td> debug </td><td>否</td><td>false</td><td>调试模式下将在控制台中输出调用window._hmt时传递的参数</td><td>请不要在生产环境中使用，避免造成安全隐患</td></tr><tr><td> src </td><td>否</td><td><a href="https://hm.baidu.com/hm.js?SITEID" target="_blank" rel="external">https://hm.baidu.com/hm.js?SITEID</a></td><td>指定统计脚本标签的 src 属性</td><td></td></tr></table>
 
 <h2 id="ba-API"><a href="#ba-API" class="headerlink" title="ba API"></a>ba API</h2><h3 id="trackEvent"><a href="#trackEvent" class="headerlink" title="trackEvent"></a>trackEvent</h3><p>用于发送页面上按钮等交互元素被触发时的事件统计请求。</p>
